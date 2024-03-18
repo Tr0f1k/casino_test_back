@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // This endpoint is sending the information about games from JSON file to the frontend
-app.get('/gamedata', (req: Request, res: Response) => {
+app.get('https://casino-test-back.vercel.app/gamedata', (req: Request, res: Response) => {
   try {
     res.json(gameData);
   } catch (error) {
@@ -74,7 +74,7 @@ function calculateSpinRewards(spinResults: string[]): number {
 }
 
 // This endpoint send the spin result and the amount of coins won to the frontend
-app.get('/spin', (req: Request, res: Response) => {
+app.get('https://casino-test-back.vercel.app/spin', (req: Request, res: Response) => {
   try {
     const spinResults: string[] = generateSpinResults();
     const coinsWon: number = calculateSpinRewards(spinResults);
