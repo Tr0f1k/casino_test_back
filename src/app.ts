@@ -8,7 +8,7 @@ const app = express();
 app.use((req, res, next) => {
   res.setHeader(
     'Access-Control-Allow-Origin',
-    'https://casino-test-back.vercel.app',
+    'https://casino-test-pearl.vercel.app',
   );
   res.setHeader(
     'Access-Control-Allow-Methods',
