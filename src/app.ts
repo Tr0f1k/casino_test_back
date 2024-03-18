@@ -6,7 +6,10 @@ const app = express();
 
 // Middleware to enable CORS
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'https://casino-test-back.vercel.app/',
+  );
   res.setHeader(
     'Access-Control-Allow-Methods',
     'GET, POST, OPTIONS, PUT, PATCH, DELETE',
