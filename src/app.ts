@@ -27,6 +27,11 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// This endpoint is showing the list of available routes
+app.get('*', (req: Request, res: Response) => {
+  res.send('Available routes: /spin, /gamelist');
+});
+
 // This endpoint is sending the information about games from JSON file to the frontend
 app.get('/gamedata', (req: Request, res: Response) => {
   try {
