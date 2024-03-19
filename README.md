@@ -13,6 +13,10 @@ In this folder, you can find the backend for solving the test assignment
 
 This backend application was deployed on 'Vercel' cloud service and is accessible via this link: https://casino-test-back.vercel.app/ , so there is no need to set up anything to work with this application. The 'Vercel' deployment config is located in 'vercel.json' file
 
+## Description
+
+This application holds all needed endpoints for solving this assignment. As required, exceptions were used.
+
 ## Endpoints
 
 There are three endpoints in this app:
