@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // This endpoint is showing the list of available routes
-app.get('*', (req: Request, res: Response) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('Available routes: /spin, /gamelist');
 });
 

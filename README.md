@@ -19,7 +19,7 @@ There are three endpoints in this app:
 
 - /spin
 - /gamelist
-- endpoint that sends you the list of available endpoints in case if user tries to access any endpoint but the first two
+- / that shows the available routes
 
 ## /spin
 
