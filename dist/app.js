@@ -9,13 +9,24 @@ const game_data_json_1 = __importDefault(require("./data/game-data.json"));
 const app = (0, express_1.default)();
 // Middleware to enable CORS
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://localhost:3000');
+    const allowedOrigins = [
+        'https://casino-test-pearl.vercel.app',
+        'http://localhost:3000',
+    ];
+    const origin = req.headers.origin;
+    if (origin && allowedOrigins.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+    }
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     next();
 });
 app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
+// This endpoint is showing the list of available routes
+app.get('/', (req, res) => {
+    res.send('Available routes: /spin, /gamelist');
+});
 // This endpoint is sending the information about games from JSON file to the frontend
 app.get('/gamedata', (req, res) => {
     try {
